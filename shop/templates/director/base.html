@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onner</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+
+</head>
+<body>
+
+
+{% block navbar %}
+
+
+    {% block navbar1 %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <a href="{% url 'home' %}" class="navbar-brand">My Shop</a>
+
+    <form action="{% url 'search_pro' %}" method="get" class="form-inline mx-auto">
+
+        <div class="form-group">
+            <input type="text" name="pro_code" placeholder="Enter product code to search this product" class="form-control" size="50">
+            <input type="submit" class="btn btn-success ml-2">
+        </div>
+    </form>
+
+    <ul class="navbar-nav ">
+        <li class="nav-item">
+            <a href="{% url 'logout_dir' %}" class="btn btn-primary">LOGOUT</a>
+        </li>
+    </ul>
+</nav>
+    {% endblock %}
+
+
+    {% block navbar2 %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <a href="{% url 'home' %}" class="navbar-brand">My Shop</a>
+
+    <ul class="navbar-nav ml-auto ml-5 ">
+        <li class="nav-item ">
+            <a href="{% url 'login_dir' %}" class="btn btn-primary">Logout</a>
+        </li>
+    </ul>
+</nav>
+        {% endblock %}
+{% endblock %}
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 mt-5">
+            {% block side %}
+    <div class="list-group">
+        <a href="{% url 'emp_manage' %}" class="list-group-item list-group-item-action">Emplyee_manage</a>
+        <a href="{% url 'pro_manage' %}" class="list-group-item list-group-item-action">Product_manage</a>
+        <a href="{% url 'insert_pro' %}" class="list-group-item list-group-item-action">Add Product</a>
+        <a href="{% url 'insert_emp' %}" class="list-group-item list-group-item-action">Add Emplyee</a>
+    </div>
+{% endblock %}
+        </div>
+    <div class="col-lg-8">
+        {% block contant %}  {% endblock %}
+    </div>
+    </div>
+</div>
+
+
+</body>
+</html>

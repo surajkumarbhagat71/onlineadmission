@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onner</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <a href="{% url 'home' %}" class="navbar-brand">My Shop</a>
+
+    <ul class="navbar-nav ml-auto ml-5 ">
+        <li class="nav-item ">
+            <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+        </li>
+    </ul>
+</nav>
+
+
+  <div class="container mt-3">
+    <div class="row">
+        <div class="col-lg-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{% url 'login_dir' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <table>Email Id</table>
+                            <input type="text" name="username" placeholder="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <table>Password</table>
+                            <input type="password" name="password" placeholder="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block">
+                        </div>
+                        <div class="form-group">
+                            <a href="" class="btn btn-dark btn-block">Forger Password</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

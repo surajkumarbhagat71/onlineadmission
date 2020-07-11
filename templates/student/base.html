@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#341f97;">
+    <a href="" class="navbar-brand">Student Management System</a>
+
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a href="{% url 'admission' %}" class="nav-link ml-2">Addmission</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="{% url 'document' %}" class="nav-link ml2">document</a>
+        </li>
+
+         <li class="nav-item">
+             <a href="{% url 'slogout' %}" class="btn btn-danger btn-sm shadow-lg ml-2">LogOut</a>
+         </li>
+    </ul>
+</nav>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>

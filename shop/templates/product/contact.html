@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Onner</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <a href="{% url 'home' %}" class="navbar-brand">My Shop</a>
+
+    <ul class="navbar-nav ml-auto ml-5 ">
+        <li class="nav-item ">
+            <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+        </li>
+    </ul>
+</nav>
+
+
+  <div class="container mt-3">
+    <div class="row">
+        <div class="col-lg-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                   <table class="table tab-pane">
+                       <tr>
+                           <td>Name</td>
+                           <td>suraj kumar</td>
+                       </tr>
+
+                       <tr>
+                           <td>Contact</td>
+                           <td>8748348348 , 48387479347</td>
+                       </tr>
+
+                       <tr>
+                           <td>email</td>
+                           <td>suraj@gmail.com</td>
+                       </tr>
+
+                       <tr>
+                           <td>Address </td>
+                           <td>Shighewer</td>
+                       </tr>
+
+                       <tr>
+                           <td>City</td>
+                           <td>madhepura</td>
+                       </tr>
+                   </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

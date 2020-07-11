@@ -1,0 +1,39 @@
+{% extends 'emplyee/base.html' %}
+
+{% block navbar %}
+{% block navbar2 %}
+{{ block.super }}
+{% endblock %}
+{% endblock %}
+
+{% block contant %}
+  <div class="container mt-3">
+    <div class="row">
+        <div class="col-lg-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{% url 'login' %}" method="post">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            <table>Email Id</table>
+                            <input type="text" name="username" placeholder="password" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <table>Password</table>
+                            <input type="password" name="password" placeholder="password" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+{% endblock %}
+

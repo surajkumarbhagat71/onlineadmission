@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admission</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a href="" class="navbar-brand">Admission Management System</a>
+
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-3 mt-5">
+            {% block side %}
+                <div class="card border-0 shadow-lg">
+               <div class="list-group">
+                   <a href="{% url 'dashabord' %}" class="list-group list-group-item list-group-item-action active text-center">Dashabord</a>
+                   <a href="{% url 'add_col' %}" class="list-group list-group-item list-group-item-action  text-center">Add college</a>
+                   <a href="{% url 'add_course' %}" class="list-group list-group-item list-group-item-action text-center">Add Course</a>
+                   <a href="{% url 'add_category' %}" class="list-group list-group-item list-group-item-action  text-center">Add Category</a>
+                   <a href="{% url 'logout' %}" class="list-group list-group-item list-group-item-action bg-danger text-center active">LogOut</a>
+               </div>
+                </div>
+            {% endblock %}
+        </div>
+    <div class="col-lg-9">
+        {% block content %} {% endblock %}
+    </div>
+
+    </div>
+</div>
+
+</body>
+</html>

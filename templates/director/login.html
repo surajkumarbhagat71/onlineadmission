@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a href="{% url 'home' %}" class="navbar-brand">Admission Management System</a>
+
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 mx-auto">
+            <div class="card mt-lg-5">
+                <div class="card-header shadow-sm border-0 text-white" style="background-color: #3c6382">
+                    <h3 class="display-5 text-center">Admin Login</h3>
+                </div>
+                <div class="card-body">
+                    <form action="{% url 'login' %}" method="post">
+                       {% csrf_token %}
+                       <div class="form-group">
+                          <table>UserName</table>
+                           <input type="text" name="username" placeholder="Enter Email" class="form-control">
+                       </div>
+                       <div class="form-group">
+                           <table>Passwork</table>
+                           <input type="password" name="password" placeholder="Password" class="form-control">
+                       </div>
+                       <div class="form-group">
+                           <input type="submit" value="Login" class="btn btn-primary btn-block border-0 shadow-sm">
+                       </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

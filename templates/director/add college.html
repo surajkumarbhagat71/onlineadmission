@@ -1,0 +1,30 @@
+{% extends 'director/base.html' %}
+
+{% block side %}
+   {{ block.super }}
+{% endblock %}
+
+{% block content %}
+     <div class="container">
+        <div class="row">
+            <div class="col-lg-7 mx-auto mt-4">
+                <div class="card">
+                    <div class="card-header bg-info text-center text-white">Add College</div>
+                    <div class="card-body">
+                        <form action="{% url 'add_col' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <table class="table">
+                                {{ colform }}
+                            </table>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-block">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+{% endblock %}
+
+

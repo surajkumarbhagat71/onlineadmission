@@ -1,0 +1,50 @@
+{% extends 'product/base.html' %}
+
+{% block navbar %}
+{% block navbar2 %}
+
+{{ block.super }}
+
+{% endblock %}
+{% endblock %}
+
+
+{% block content %}
+
+    {% if pro|length > 0  %}
+
+    <div class="container mt-3">
+      <div class="row">
+          <div class="col-lg-10 mx-auto">
+              <div class="card">
+                  <table class="table table-hover">
+                      <tr class="bg-dark text-white">
+                          <th>Product Name</th>
+                          <th>product code </th>
+                          <th>Retail Price</th>
+                          <th>Wholesale Price</th>
+                      </tr>
+                      {% for foo in pro %}
+                      <tr>
+                          <td>{{ foo.pro_name }}</td>
+                          <td>{{ foo.pro_code }}</td>
+                          <td>{{ foo.pro_retail_price }}</td>
+                          <td>{{ foo.pro_wholesale_price }}</td>
+                      </tr>
+                      {% endfor %}
+                  </table>
+              </div>
+          </div>
+      </div>
+    </div>
+
+     {% else %}
+        <div class="col-lg-6 mx-auto mt-3">
+            <div class="alert alert-danger" role="alert">Data not found   please try again <br>
+               <a href="{% url 'product' %}" class="btn btn-success">Product</a>
+            </div>
+        </div>
+
+    {% endif %}
+
+{% endblock %}

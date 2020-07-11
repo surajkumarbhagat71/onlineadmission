@@ -1,0 +1,48 @@
+{% extends 'director/base.html' %}
+
+{% block navbar %}
+{% block navbar1 %}
+
+    {{ block.super }}
+
+{% endblock %}
+{% endblock %}
+
+{% block side %}
+   {{ block.super }}
+{% endblock %}
+
+{% block contant %}
+
+    <div class="container-fluid mt-5">
+      <div class="card">
+          <table class="table table-hover">
+
+              <tr class="bg-dark text-white">
+                  <th>Product name</th>
+                  <th>Product code </th>
+                  <th>Product Retail Price </th>
+                  <th>Product Wholesale Price</th>
+                  <th>Action</th>
+              </tr>
+
+              {% for x in pro %}
+              <tr>
+
+                  <td>{{ x.pro_name }}</td>
+                  <td>{{ x.pro_code }}</td>
+                  <td>{{ x.pro_retail_price }}</td>
+                  <td>{{ x.pro_wholesale_price }}</td>
+                  <td>
+                      <a href="{% url 'update_pro' x.id %}" class="btn btn-primary btn-sm">Update</a>
+                      <a href="{% url 'delete_pro' x.id %}" class="btn btn-danger btn-sm">X</a>
+                  </td>
+              </tr>
+
+              {% endfor %}
+          </table>
+      </div>
+    </div>
+
+
+{% endblock %}

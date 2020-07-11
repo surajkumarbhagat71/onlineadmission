@@ -1,0 +1,36 @@
+{% extends 'director/base.html' %}
+
+{% block navbar %}
+{% block navbar1 %}
+   {{ block.super }}
+{% endblock %}
+{% endblock %}
+
+{% block side %}
+   {{ block.super }}
+{% endblock %}
+
+{% block contant %}
+
+    <div class="container">
+       <div class="row">
+           {% for foo in emp %}
+           <div class="col-lg-4 mt-3">
+               <a href="{% url 'emp_detail' foo.emp_id %}">
+               <div class="card">
+                   <img src="{{ foo.emp_image.url }}" alt="" height="200">
+
+                  <div class="card-body">
+                     <h2 class="lead">Name:- {{ foo.emp_name }}</h2>
+                      <h2 class="lead">Email:-  {{ foo.emp_email }}</h2>
+                      <h2 class="lead">Conatact:- {{ foo.contact }}</h2>
+                    </div>
+               </div>
+               </a>
+               </div>
+           {% endfor %}
+       </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'emplyee/base.html' %}
+
+{% block navbar %}
+{% block navbar1 %}
+
+    {{ block.super }}
+
+{% endblock %}
+{% endblock %}
+
+{% block contant  %}
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <img src="{{ profile.0.emp_image.url }}" alt="">
+            </div>
+           </div>
+          <div class="card-body">
+                <div class="col-lg-8">
+
+                 <table class="table">
+                    <tr>
+                        <td>Name</td>
+                        <td>{{ profile.0.emp_name }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Gender</td>
+                        <td>{{ profile.0.emp_gender }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>contact</td>
+                        <td>{{ profile.0.contact }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>email</td>
+                        <td>{{ profile.0.emp_email }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Address</td>
+                        <td>{{ profile.0.emp_address}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>City</td>
+                        <td>{{ profile.0.emp_city }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>DOB</td>
+                        <td>{{ profile.0.emp_dob }}</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Join date</td>
+                        <td>{{ profile.0.emp_join_date }}</td>
+                    </tr>
+                 </table>
+                </div>
+          </div>
+    </div>
+  </div>
+
+{% endblock %}

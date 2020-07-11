@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.css' %}">
+
+</head>
+<body><!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+    <a class="navbar-brand" href="{% url 'homepage' %}">Labowd.com</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+
+
+        <form action="{% url 'search' %}" method="get" class="form-inline mx-auto">
+            <input type="search" size="70" placeholder="search by name or profession" name="search" class="form-control">
+            <input type="submit" hidden name="find">
+        </form>
+
+
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'addRecord' %}">Add Records</a>
+                </li>
+             {% if not request.user.is_authenticated %}
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                 {% else %}
+                    <li class="nav-item">
+                        <a href="{% url 'account_logout' %}" class="nav-link badge badge-danger mt-1 p-2">Logout</a>
+                    </li>
+                {% endif %}
+       </ul>
+    </div>
+</nav>
+<!--/.Navbar -->
+
+{% block content %}
+
+{% endblock %}
+
+<script src="https://kit.fontawesome.com/9620ac7e85.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/mdb.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>

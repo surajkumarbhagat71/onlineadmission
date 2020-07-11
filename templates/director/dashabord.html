@@ -1,0 +1,81 @@
+{% extends 'director/base.html' %}
+
+{% block side  %}
+   {{ block.super }}
+{% endblock %}
+
+{% block content %}
+   <div class="container-fluid">
+     <div class="row">
+
+
+         <div class="col-lg-4">
+             <a href="{% url 'all_college' %}">
+             <div class="card">
+                 <div class="card-header" style="background-color: #4834d4;">
+                     <h5 class="display-5 text-white text-center" >All College</h5>
+                 </div>
+                 <div class="card-body">
+                     <h2 class="text-center"><b>{{ college }}</b></h2>
+                 </div>
+             </div>
+             </a>
+         </div>
+
+
+         <div class="col-lg-4">
+             <a href="{% url 'all_course' %}">
+             <div class="card">
+                 <div class="card-header" style="background-color: #ff3f34;">
+                     <h5 class="display-5 text-white text-center"> All Course</h5>
+                 </div>
+                 <div class="card-body">
+                   <h2 class="text-center"><b>{{ course }}</b></h2>
+                 </div>
+             </div>
+             </a>
+         </div>
+
+
+
+         <div class="col-lg-4 ">
+             <a href="{% url 'all_category' %}">
+             <div class="card">
+                 <div class="card-header" style="background-color:#3c40c6;">
+                     <h5 class="display-5 text-white text-center">All Category</h5>
+                 </div>
+                 <div class="card-body">
+                     <h2 class="text-center"><b>{{ cat  }}</b></h2>
+                 </div>
+             </div>
+             </a>
+         </div>
+
+
+         <div class="col-lg-4 mt-4">
+             <div class="card">
+                 <div class="card-header " style="background-color:#B53471;">
+                     <h5 class="display-5 text-center text-white">All Admition</h5>
+                 </div>
+                 <div class="card-body">
+                     <h2 class="text-center"><b>{{ admission  }}</b></h2>
+                 </div>
+             </div>
+         </div>
+
+
+         <div class="col-lg-4 mt-4">
+             <div class="card">
+                 <div class="card-header "  style="background-color:#B53471;">
+                     <h5 class="display-5 text-white text-center">All Registation</h5>
+                 </div>
+                 <div class="card-body">
+                     <h2 class="text-center"><b>{{ registation  }}</b></h2>
+                 </div>
+             </div>
+         </div>
+
+     </div>
+   </div>
+
+{% endblock %}

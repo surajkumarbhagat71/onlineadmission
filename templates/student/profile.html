@@ -1,0 +1,54 @@
+{% extends 'student/base.html' %}
+
+{% block side %}
+   {{ block.super }}
+{% endblock %}
+
+{% block content %}
+     <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-4 mx-auto">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <img src="{{ all_detail.student_img.url }}" class="w-100">
+                                    </div>
+                                </div>
+                            </div>
+{#                fas for normal icon and fab for any type of brand #}
+                            <div class="col-lg-7 ml-auto mt-5">
+                                 <table class="table table-borderless mt-2">
+                                     <tr>
+                                         <td><b><i class="fas fa-user"></i>&nbsp; Name : </b></td>
+                                         <td>{{ profile.student_first_name }}   {{ profile.student_last_name }}</td>
+                                     </tr>
+
+                                     <tr>
+                                         <td><b><i class="fas fa-envelope"></i>&nbsp; Email Id : </b></td>
+                                         <td>{{ profile.student_email }}</td>
+                                     </tr>
+
+                                     <tr>
+                                         <td><b> <i class="fa fa-address-card">&nbsp;</i>Contact : </b></td>
+                                         <td>{{ profile.student_contact }}</td>
+                                     </tr>
+
+                                     <tr>
+                                         <td><b><i class="fas fa-address-card"></i>&nbsp;   Address : </b></td>
+                                         <td>{{ profile.student_address }}</td>
+                                     </tr>
+                                 </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+
+{% endblock %}
+

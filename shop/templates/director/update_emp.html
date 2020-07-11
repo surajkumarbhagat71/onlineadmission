@@ -1,0 +1,19 @@
+{% extends 'director/base.html' %}
+
+{% block navbar %}
+{% block navbar2 %}
+{{ block.super }}
+{% endblock %}
+{% endblock %}
+
+{% block contant %}
+           <div class="card mt-4">
+               <form method="post" enctype="multipart/form-data" ">
+                   {% csrf_token %}
+                   <table class="table">
+                       {{ emp_form }}
+                   </table>
+                   <input type="submit" class="btn btn-primary btn-lg">
+               </form>
+           </div>
+{% endblock %}

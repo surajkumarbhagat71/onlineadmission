@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-3">
+                {% include "side.html" %}
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    {% for p in object_list %}
+                        <div class="col-lg-4">
+                            <!-- Card -->
+                            <div class="card">
+                            {% load static %}
+                                <img src="{% static 'default.png' %}" alt="" class="card-img-top">
+                                <div class="card-body">
+                                    <h4 class="card-title"><a>{{ p.name }}</a></h4>
+                                    <p class="small">{{ p.contact }}
+                                    {% if p.secondary_contact %}
+                                        , {{ p.secondary_contact }}</p>
+                                    {% endif %}
+                                    </p>
+
+                                    <p class="small">
+                                        {% for c in p.category.all %}
+                                            {{ c.cat_title }}
+                                        {% endfor %}
+                                    </p>
+
+                                    <a href="{% url 'item' p.id %}" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
